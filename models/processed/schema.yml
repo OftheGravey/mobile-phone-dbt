@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: best_specs_for_price
+    columns:
+      - name: price_range
+        tests:
+          - accepted_values:
+              values: [0.0, 1.0, 2.0, 3.0]
+      - name: "index"
+        tests:
+          - relationships:
+              to: ref('mobile_price_rante')
+              field: "index"
+  - name: price_range_for_specs
+    columns:
+      - name: price_range
+        tests:
+          - accepted_values:
+              values: [0.0, 1.0, 2.0, 3.0]
+  - name: ram_by_price
+    columns:
+      - name: price_range
+        tests:
+          - accepted_values:
+              values: [0.0, 1.0, 2.0, 3.0]
+      - name: "index"
+        tests:
+          - relationships:
+              to: ref('mobile_price_rante')
+              field: "index"

@@ -10,8 +10,9 @@ test-paths: ["test"]
 docs-paths: ["docs"]
 snapshot-paths: ["snapshots"]
 
-
 models:
   mobile_games:
-    events:
+    processed:
       +materialized: table
+    raw:
+      +materialized: table 

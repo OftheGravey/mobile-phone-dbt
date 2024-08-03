@@ -1,0 +1,17 @@
+name: mobile_games
+
+profile: dbt_sqlite
+
+config-version: 2
+version: 0.1
+
+model-paths: ["models"]
+test-paths: ["test"]
+docs-paths: ["docs"]
+snapshot-paths: ["snapshots"]
+
+
+models:
+  mobile_games:
+    events:
+      +materialized: table

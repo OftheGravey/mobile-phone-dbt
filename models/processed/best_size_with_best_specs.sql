@@ -3,14 +3,12 @@
     schema="mobile_games"
 ) }}
 
-{% set tracked_specs = ['ram', 'clock_speed', 'int_memory', 'n_cores'] %}
-
 SELECT
     bsp."index",
     pxp.px_height,
     pxp.px_width,
     pxp.price_range,
-    {%- for spec in tracked_specs -%}
+    {%- for spec in var('tracked_specs') -%}
         bsp.{{ spec }}
         {%- if not loop.last -%}
             ,

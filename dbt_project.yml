@@ -10,6 +10,9 @@ test-paths: ["test"]
 docs-paths: ["docs"]
 snapshot-paths: ["snapshots"]
 
+vars: 
+  tracked_specs: ['ram', 'clock_speed', 'int_memory', 'n_cores']
+
 models:
   mobile_games:
     processed:

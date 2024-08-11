@@ -3,10 +3,8 @@
     schema="mobile_games"
 ) }}
 
-{% set tracked_specs = ['ram', 'clock_speed', 'int_memory', 'n_cores'] %}
-
 SELECT price_range,
-    {%- for spec in tracked_specs -%}
+    {%- for spec in var('tracked_specs') -%}
         AVG({{ spec }}) AS avg_{{ spec }}
         {%- if not loop.last -%}
             ,

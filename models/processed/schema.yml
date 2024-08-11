@@ -8,11 +8,11 @@ models:
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
-      - name: "index"
+      - name: "id"
         tests:
           - relationships:
-              to: ref('mobile_price_rante')
-              field: "index"
+              to: ref('mobile_device_specs')
+              field: "id"
   - name: price_range_for_specs
     description: "Shows average specs by their price range"
     columns:
@@ -27,11 +27,11 @@ models:
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
-      - name: "index"
+      - name: "id"
         tests:
           - relationships:
-              to: ref('mobile_price_rante')
-              field: "index"
+              to: ref('mobile_device_specs')
+              field: "id"
   - name: px_range_by_price
     description: "Shows ram by Phone ID"
     columns:
@@ -39,11 +39,11 @@ models:
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
-      - name: "index"
+      - name: "id"
         tests:
           - relationships:
-              to: ref('mobile_price_rante')
-              field: "index"
+              to: ref('mobile_device_specs')
+              field: "id"
   - name: best_size_with_best_specs
     description: "Shows ram by Phone ID"
     columns:
@@ -51,8 +51,8 @@ models:
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
-      - name: "index"
+      - name: "id"
         tests:
           - relationships:
-              to: ref('mobile_price_rante')
-              field: "index"
+              to: ref('mobile_device_specs')
+              field: "id"

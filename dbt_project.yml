@@ -1,4 +1,4 @@
-name: mobile_games
+name: mobile_devices
 
 profile: dbt_sqlite
 
@@ -14,7 +14,7 @@ vars:
   tracked_specs: ['ram', 'clock_speed', 'int_memory', 'n_cores']
 
 models:
-  mobile_games:
+  mobile_devices:
     processed:
       +materialized: table
     raw:

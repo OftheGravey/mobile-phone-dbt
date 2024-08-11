@@ -1,10 +1,10 @@
 {{ config(
     materialized="table",
-    schema="mobile_games"
+    schema="mobile_devices"
 ) }}
 
 SELECT
-    bsp."index",
+    bsp."id",
     pxp.px_height,
     pxp.px_width,
     pxp.price_range,
@@ -16,4 +16,4 @@ SELECT
     {% endfor %}
 FROM {{ ref('best_specs_for_price') }} AS bsp
 INNER JOIN {{ ref('px_range_by_price') }} AS pxp
-ON bsp."index" = pxp."index"
+ON bsp."id" = pxp."id"

@@ -1,6 +1,6 @@
 {{ config(
     materialized="table",
-    schema="mobile_games"
+    schema="mobile_devices"
 ) }}
 
 SELECT price_range,
@@ -10,6 +10,6 @@ SELECT price_range,
             ,
         {% endif %}
     {% endfor %}
-FROM {{ ref('mobile_price_rante') }}
+FROM {{ ref('mobile_device_specs') }}
 WHERE price_range IS NOT NULL
 GROUP BY price_range

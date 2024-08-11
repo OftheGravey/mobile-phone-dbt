@@ -1,9 +1,9 @@
 {{ config(
     materialized="table",
-    schema="mobile_games"
+    schema="mobile_devices"
 ) }}
 
-SELECT "index",
+SELECT "id",
     mpr.price_range, 
     {%- for spec in var('tracked_specs') -%}
         mpr.{{ spec }}
@@ -11,7 +11,7 @@ SELECT "index",
             ,
         {% endif %}
     {% endfor %}
-FROM {{ ref('mobile_price_rante') }}  mpr
+FROM {{ ref('mobile_device_specs') }}  mpr
 INNER JOIN {{ ref("price_range_for_specs") }} prs
 ON  mpr.price_range = prs.price_range AND
     {% for spec in var('tracked_specs') %}

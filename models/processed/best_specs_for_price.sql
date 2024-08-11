@@ -3,7 +3,7 @@
     schema="mobile_games"
 ) }}
 
-{% set tracked_specs = ['ram', 'clock_speed', 'int_memory', 'n_cores', 'px_height', 'px_width'] %}
+{% set tracked_specs = ['ram', 'clock_speed', 'int_memory', 'n_cores'] %}
 
 SELECT "index",
     mpr.price_range, 

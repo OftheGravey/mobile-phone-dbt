@@ -5,13 +5,17 @@
 
 {% set tracked_specs = ['ram', 'clock_speed', 'int_memory', 'n_cores'] %}
 
-SELECT price_range,
+SELECT
+    bsp."index",
+    pxp.px_height,
+    pxp.px_width,
+    pxp.price_range,
     {%- for spec in tracked_specs -%}
-        AVG({{ spec }}) AS avg_{{ spec }}
+        bsp.{{ spec }}
         {%- if not loop.last -%}
             ,
         {% endif %}
     {% endfor %}
-FROM {{ ref('mobile_price_rante') }}
-WHERE price_range IS NOT NULL
-GROUP BY price_range
+FROM {{ ref('best_specs_for_price') }} AS bsp
+INNER JOIN {{ ref('px_range_by_price') }} AS pxp
+ON bsp."index" = pxp."index"

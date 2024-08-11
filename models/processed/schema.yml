@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: best_specs_for_price
+    description: "Shows phones that outpreform the average in their price range"
     columns:
       - name: price_range
         tests:
@@ -13,12 +14,38 @@ models:
               to: ref('mobile_price_rante')
               field: "index"
   - name: price_range_for_specs
+    description: "Shows average specs by their price range"
     columns:
       - name: price_range
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
   - name: ram_by_price
+    description: "Shows ram by Phone ID"
+    columns:
+      - name: price_range
+        tests:
+          - accepted_values:
+              values: [0.0, 1.0, 2.0, 3.0]
+      - name: "index"
+        tests:
+          - relationships:
+              to: ref('mobile_price_rante')
+              field: "index"
+  - name: px_range_by_price
+    description: "Shows ram by Phone ID"
+    columns:
+      - name: price_range
+        tests:
+          - accepted_values:
+              values: [0.0, 1.0, 2.0, 3.0]
+      - name: "index"
+        tests:
+          - relationships:
+              to: ref('mobile_price_rante')
+              field: "index"
+  - name: best_size_with_best_specs
+    description: "Shows ram by Phone ID"
     columns:
       - name: price_range
         tests:

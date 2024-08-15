@@ -5,10 +5,12 @@ models:
     description: "Shows phones that outpreform the average in their price range"
     columns:
       - name: price_range
+        description: "Price range of mobile device"
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
       - name: "id"
+        description: "ID of mobile device"
         tests:
           - relationships:
               to: ref('mobile_device_specs')
@@ -17,6 +19,7 @@ models:
     description: "Shows average specs by their price range"
     columns:
       - name: price_range
+        description: "Price range of mobile device"
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
@@ -24,10 +27,12 @@ models:
     description: "Shows ram by Phone ID"
     columns:
       - name: price_range
+        description: "Price range of mobile device"
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
       - name: "id"
+        description: "ID of mobile device"
         tests:
           - relationships:
               to: ref('mobile_device_specs')
@@ -36,10 +41,12 @@ models:
     description: "Pixel range of phones by price"
     columns:
       - name: price_range
+        description: "Price range of mobile device"
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
       - name: "id"
+        description: "ID of mobile device"
         tests:
           - relationships:
               to: ref('mobile_device_specs')
@@ -48,10 +55,12 @@ models:
     description: "Shows ram by Phone ID"
     columns:
       - name: price_range
+        description: "Price range of mobile device"
         tests:
           - accepted_values:
               values: [0.0, 1.0, 2.0, 3.0]
       - name: "id"
+        description: "ID of mobile device"
         tests:
           - relationships:
               to: ref('mobile_device_specs')

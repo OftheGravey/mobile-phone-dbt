@@ -1,6 +1,6 @@
 name: mobile_devices
 
-profile: dbt_sqlite
+profile: prod
 
 config-version: 2
 version: 0.1

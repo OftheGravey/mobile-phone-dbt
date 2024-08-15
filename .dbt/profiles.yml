@@ -1,0 +1,20 @@
+dev:
+  outputs:
+    default:
+      type: sqlite
+      threads: 1
+      database: data
+      schema: 'dev'
+      schemas_and_paths:
+        main: 'data/mobile_devices.db'
+      schema_directory: 'data'
+prod:
+  outputs:
+    default:
+      type: sqlite
+      threads: 1
+      database: data
+      schema: 'prod'
+      schemas_and_paths:
+        main: 'data/mobile_devices.db'
+      schema_directory: 'data'

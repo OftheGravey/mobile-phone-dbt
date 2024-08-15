@@ -33,7 +33,7 @@ models:
               to: ref('mobile_device_specs')
               field: "id"
   - name: px_range_by_price
-    description: "Shows ram by Phone ID"
+    description: "Pixel range of phones by price"
     columns:
       - name: price_range
         tests:

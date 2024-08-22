@@ -12,6 +12,6 @@ SELECT
         
     bsp.n_cores
     
-FROM prod_mobile_devices."best_specs_for_price" AS bsp
-INNER JOIN prod_mobile_devices."px_range_by_price" AS pxp
+FROM "mobile_devices"."main"."best_specs_for_price" AS bsp
+INNER JOIN "mobile_devices"."main"."px_range_by_price" AS pxp
 ON bsp."id" = pxp."id"

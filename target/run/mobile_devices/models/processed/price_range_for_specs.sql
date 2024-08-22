@@ -2,9 +2,12 @@
   
     
     
-    create  table prod_mobile_devices."price_range_for_specs"
-    as
-        
+
+    create  table
+      "mobile_devices"."main"."price_range_for_specs__dbt_tmp"
+  
+    as (
+      
 
 SELECT price_range,AVG(ram) AS avg_ram,
         
@@ -14,8 +17,9 @@ SELECT price_range,AVG(ram) AS avg_ram,
         
     AVG(n_cores) AS avg_n_cores
     
-FROM prod_mobile_devices."mobile_device_specs"
+FROM 'mobile_device_specs'
 WHERE price_range IS NOT NULL
 GROUP BY price_range
-
+    );
+  
   

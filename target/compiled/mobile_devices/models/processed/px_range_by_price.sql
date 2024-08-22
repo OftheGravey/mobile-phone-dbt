@@ -10,7 +10,7 @@ WITH ranked_pixel_size AS (
             PARTITION BY price_range
             ORDER BY px_height * px_width
         ) rank_pixel_count
-    FROM prod_mobile_devices."mobile_device_specs"
+    FROM 'mobile_device_specs'
     WHERE price_range IS NOT NULL
 )
 SELECT

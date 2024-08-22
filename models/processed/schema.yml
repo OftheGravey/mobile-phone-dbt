@@ -13,7 +13,7 @@ models:
         description: "ID of mobile device"
         tests:
           - relationships:
-              to: ref('mobile_device_specs')
+              to: 'mobile_device_specs'
               field: "id"
   - name: price_range_for_specs
     description: "Shows average specs by their price range"
@@ -35,7 +35,7 @@ models:
         description: "ID of mobile device"
         tests:
           - relationships:
-              to: ref('mobile_device_specs')
+              to: 'mobile_device_specs'
               field: "id"
   - name: px_range_by_price
     description: "Pixel range of phones by price"
@@ -49,7 +49,7 @@ models:
         description: "ID of mobile device"
         tests:
           - relationships:
-              to: ref('mobile_device_specs')
+              to: 'mobile_device_specs'
               field: "id"
   - name: best_size_with_best_specs
     description: "Shows ram by Phone ID"
@@ -63,5 +63,5 @@ models:
         description: "ID of mobile device"
         tests:
           - relationships:
-              to: ref('mobile_device_specs')
+              to: 'mobile_device_specs'
               field: "id"

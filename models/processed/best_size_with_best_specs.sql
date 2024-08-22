@@ -1,6 +1,5 @@
 {{ config(
-    materialized="table",
-    schema="mobile_devices"
+    materialized="table"
 ) }}
 
 SELECT

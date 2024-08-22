@@ -8,7 +8,7 @@ with all_values as (
         price_range as value_field,
         count(*) as n_records
 
-    from prod_mobile_devices."ram_by_price"
+    from "mobile_devices"."main"."ram_by_price"
     group by price_range
 
 )

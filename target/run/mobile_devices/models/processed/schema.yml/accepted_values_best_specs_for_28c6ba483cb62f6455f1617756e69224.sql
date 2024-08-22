@@ -1,4 +1,9 @@
-
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
     
     
 
@@ -8,7 +13,7 @@ with all_values as (
         price_range as value_field,
         count(*) as n_records
 
-    from "mobile_devices"."main"."px_range_by_price"
+    from "mobile_devices"."main"."best_specs_for_price"
     group by price_range
 
 )
@@ -20,3 +25,6 @@ where value_field not in (
 )
 
 
+
+      
+    ) dbt_internal_test

@@ -2,9 +2,12 @@
   
     
     
-    create  table prod_mobile_devices."best_specs_for_price"
-    as
-        
+
+    create  table
+      "mobile_devices"."main"."best_specs_for_price__dbt_tmp"
+  
+    as (
+      
 
 SELECT "id",
     mpr.price_range,mpr.ram,
@@ -15,8 +18,8 @@ SELECT "id",
         
     mpr.n_cores
     
-FROM prod_mobile_devices."mobile_device_specs"  mpr
-INNER JOIN prod_mobile_devices."price_range_for_specs" prs
+FROM 'mobile_device_specs'  mpr
+INNER JOIN "mobile_devices"."main"."price_range_for_specs" prs
 ON  mpr.price_range = prs.price_range AND
     
         mpr.ram > prs.avg_ram
@@ -38,5 +41,6 @@ ON  mpr.price_range = prs.price_range AND
         
     
 WHERE mpr.price_range IS NOT NULL
-
+    );
+  
   

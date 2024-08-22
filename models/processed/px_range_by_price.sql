@@ -1,6 +1,5 @@
 {{ config(
-    materialized="table",
-    schema="mobile_devices"
+    materialized="table"
 ) }}
 
 WITH ranked_pixel_size AS (
@@ -13,7 +12,7 @@ WITH ranked_pixel_size AS (
             PARTITION BY price_range
             ORDER BY px_height * px_width
         ) rank_pixel_count
-    FROM {{ ref('mobile_device_specs') }}
+    FROM 'mobile_device_specs'
     WHERE price_range IS NOT NULL
 )
 SELECT

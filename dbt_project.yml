@@ -17,5 +17,3 @@ models:
   mobile_devices:
     processed:
       +materialized: table
-    raw:
-      +materialized: table 

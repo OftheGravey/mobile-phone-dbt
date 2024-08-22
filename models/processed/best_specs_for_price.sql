@@ -1,6 +1,5 @@
 {{ config(
-    materialized="table",
-    schema="mobile_devices"
+    materialized="table"
 ) }}
 
 SELECT "id",
@@ -11,7 +10,7 @@ SELECT "id",
             ,
         {% endif %}
     {% endfor %}
-FROM {{ ref('mobile_device_specs') }}  mpr
+FROM 'mobile_device_specs'  mpr
 INNER JOIN {{ ref("price_range_for_specs") }} prs
 ON  mpr.price_range = prs.price_range AND
     {% for spec in var('tracked_specs') %}

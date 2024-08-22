@@ -2,9 +2,12 @@
   
     
     
-    create  table prod_mobile_devices."px_range_by_price"
-    as
-        
+
+    create  table
+      "mobile_devices"."main"."px_range_by_price__dbt_tmp"
+  
+    as (
+      
 
 WITH ranked_pixel_size AS (
     SELECT
@@ -16,7 +19,7 @@ WITH ranked_pixel_size AS (
             PARTITION BY price_range
             ORDER BY px_height * px_width
         ) rank_pixel_count
-    FROM prod_mobile_devices."mobile_device_specs"
+    FROM 'mobile_device_specs'
     WHERE price_range IS NOT NULL
 )
 SELECT
@@ -26,5 +29,6 @@ SELECT
     px_width
 FROM ranked_pixel_size
 WHERE rank_pixel_count > 0.75
-
+    );
+  
   

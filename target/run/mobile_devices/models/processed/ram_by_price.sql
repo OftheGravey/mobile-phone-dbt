@@ -4,7 +4,7 @@
     
 
     create  table
-      "mobile_devices"."main"."ram_by_price__dbt_tmp"
+      "mobile_devices"."main"."ram_by_price_v2__dbt_tmp"
   
     as (
       

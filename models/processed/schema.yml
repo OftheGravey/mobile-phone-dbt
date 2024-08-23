@@ -37,6 +37,15 @@ models:
           - relationships:
               to: 'mobile_device_specs'
               field: "id"
+    versions:
+    
+      - v: 1
+        # No changes
+
+      - v: 2
+        columns:
+          - include: all
+            exclude: [ram]
   - name: px_range_by_price
     description: "Pixel range of phones by price"
     columns:

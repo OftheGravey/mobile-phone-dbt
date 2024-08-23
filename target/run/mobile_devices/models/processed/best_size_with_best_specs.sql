@@ -10,7 +10,7 @@
       
 
 SELECT
-    bsp."id",
+    bsp.id,
     pxp.px_height,
     pxp.px_width,
     pxp.price_range,bsp.ram,
@@ -23,7 +23,8 @@ SELECT
     
 FROM "mobile_devices"."main"."best_specs_for_price" AS bsp
 INNER JOIN "mobile_devices"."main"."px_range_by_price" AS pxp
-ON bsp."id" = pxp."id"
+    ON
+        bsp.id = pxp.id
     );
   
   

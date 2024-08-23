@@ -1,35 +1,40 @@
-select
-      count(*) as failures,
-      case when count(*) != 0
-        then 'true' else 'false' end as should_warn,
-      case when count(*) != 0
-        then 'true' else 'false' end as should_error
-    from (
-      
-    
-    
-
-with child as (
-    select index as from_field
-    from dev_mobile_games."ram_by_price"
-    where index is not null
-),
-
-parent as (
-    select index as to_field
-    from dev_mobile_games."mobile_price_rante"
-)
-
-select
-    from_field
-
-from child
-left join parent
-    on child.from_field = parent.to_field
-
-where parent.to_field is null
+SELECT
+    count(*) AS failures,
+    CASE
+        WHEN count(*) != 0
+            THEN 'true'
+        ELSE 'false'
+    END AS should_warn,
+    CASE
+        WHEN count(*) != 0
+            THEN 'true'
+        ELSE 'false'
+    END AS should_error
+FROM (
 
 
 
-      
-    ) dbt_internal_test
+
+    WITH child AS (
+        SELECT index AS from_field
+        FROM dev_mobile_games.ram_by_price
+        WHERE index IS NOT null
+    ),
+
+    parent AS (
+        SELECT index AS to_field
+        FROM dev_mobile_games.mobile_price_rante
+    )
+
+    SELECT from_field
+
+    FROM child
+    LEFT JOIN parent
+        ON child.from_field = parent.to_field
+
+    WHERE parent.to_field IS null
+
+
+
+
+) AS dbt_internal_test

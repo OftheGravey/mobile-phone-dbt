@@ -1,11 +1,3 @@
-
-    
-    
-
-
-
-select price_range
-from dev_mobile_games."best_mobile_for_price"
-where price_range is null
-
-
+SELECT price_range
+FROM dev_mobile_games.best_mobile_for_price
+WHERE price_range IS null

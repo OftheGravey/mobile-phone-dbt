@@ -1,20 +1,19 @@
-
-
 WITH ranked_pixel_size AS (
     SELECT
-        "index", 
+        index,
         price_range,
         px_height,
         px_width,
         PERCENT_RANK() OVER (
             PARTITION BY price_range
             ORDER BY px_height * px_width
-        ) rank_pixel_count
-    FROM prod_mobile_games."mobile_price_rante"
+        ) AS rank_pixel_count
+    FROM prod_mobile_games.mobile_price_rante
     WHERE price_range IS NOT NULL
 )
+
 SELECT
-    "index",
+    index,
     price_range,
     px_height,
     px_width

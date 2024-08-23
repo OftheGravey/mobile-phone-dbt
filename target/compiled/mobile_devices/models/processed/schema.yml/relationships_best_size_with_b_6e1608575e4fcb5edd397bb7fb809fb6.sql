@@ -1,25 +1,18 @@
-
-    
-    
-
-with child as (
-    select id as from_field
-    from prod_mobile_devices."best_size_with_best_specs"
-    where id is not null
+WITH child AS (
+    SELECT id AS from_field
+    FROM prod_mobile_devices.best_size_with_best_specs
+    WHERE id IS NOT null
 ),
 
-parent as (
-    select id as to_field
-    from prod_mobile_devices."mobile_device_specs"
+parent AS (
+    SELECT id AS to_field
+    FROM prod_mobile_devices.mobile_device_specs
 )
 
-select
-    from_field
+SELECT from_field
 
-from child
-left join parent
-    on child.from_field = parent.to_field
+FROM child
+LEFT JOIN parent
+    ON child.from_field = parent.to_field
 
-where parent.to_field is null
-
-
+WHERE parent.to_field IS null

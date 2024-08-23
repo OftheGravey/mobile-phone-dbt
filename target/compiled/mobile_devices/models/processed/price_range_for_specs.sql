@@ -1,6 +1,7 @@
 
 
-SELECT price_range,AVG(ram) AS avg_ram,
+SELECT
+    price_range,AVG(ram) AS avg_ram,
         
     AVG(clock_speed) AS avg_clock_speed,
         
@@ -8,6 +9,6 @@ SELECT price_range,AVG(ram) AS avg_ram,
         
     AVG(n_cores) AS avg_n_cores
     
-FROM 'mobile_device_specs'
+FROM mobile_device_specs
 WHERE price_range IS NOT NULL
 GROUP BY price_range

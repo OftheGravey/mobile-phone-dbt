@@ -1,22 +1,16 @@
+WITH all_values AS (
 
-    
-    
+    SELECT
+        price_range AS value_field,
+        count(*) AS n_records
 
-with all_values as (
-
-    select
-        price_range as value_field,
-        count(*) as n_records
-
-    from dev_mobile_games."best_mobile_for_price"
-    group by price_range
+    FROM dev_mobile_games.best_mobile_for_price
+    GROUP BY price_range
 
 )
 
-select *
-from all_values
-where value_field not in (
-    '0.0','1.0','2.0','3.0'
+SELECT *
+FROM all_values
+WHERE value_field NOT IN (
+    '0.0', '1.0', '2.0', '3.0'
 )
-
-
